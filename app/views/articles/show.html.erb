@@ -1,7 +1,30 @@
-<h1>Showing selected article</h1>
+<div class="jumbotron center">
+  <h1>Showing selected article</h1>
+</div>
 
-<p>Title: <%= @article.title %></p>
-<p>Description: <%= @article.description %></p>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @article.title %></td>
+        <td><%= @article.description %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<%= link_to "Edit this article", edit_article_path(@article) %> |
-<%= link_to "Back to article listings", articles_path %>
+<div class= "col-xs-4 col-xs-offset-4 text-center">
+  [ <%= link_to "Edit this article", edit_article_path(@article), class: "btn" %> |
+  <%= link_to "Back to article listings", articles_path, class: "btn" %> ]
+
+</div>
+
+
+<!-- <p>Title: <%= @article.title %></p>
+<p>Description: <%= @article.description %></p> -->
