@@ -1,0 +1,11 @@
+<% if obj.errors.any? %>
+  <div class="alert alert-danger col-sm-10" role="alert">
+    <h3><%= pluralize(obj.errors.count, "error") %>
+      prevented the article from getting created:</h3>
+      <ul>
+        <% obj.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+  </div>
+<% end %>
