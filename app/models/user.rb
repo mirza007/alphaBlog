@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  attr_accessor :email, :username, :password, :password_confirmation
+
+
   has_many :articles
   before_save { self.email = email.downcase }
   before_save { self.username = username.downcase }
@@ -10,5 +13,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false },
   length: { maximum: 105}, format: { with: VALID_EMAIL_REGEX }
 
-  has_secure_password
+  # has_secure_password
 end

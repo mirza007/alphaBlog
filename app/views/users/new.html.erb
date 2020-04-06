@@ -1,0 +1,47 @@
+<div class="jumbotron center">
+  <h1>Signup Form</h1>
+</div>
+
+<div class= "container">
+
+
+
+<%= render 'shared/errors', obj: @user %>
+
+
+<%= form_for @user do |f| %>
+  <div class= "form-group row">
+    <%= f.label :username, class: "col-sm-1 col-form-label" %>
+    <div class= "col-sm-8">
+    <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
+    </div>
+  </div>
+
+  <div class= "form-group row">
+    <%= f.label :email, class: "col-sm-1 col-form-label" %>
+    <div class= "col-sm-8">
+    <%= f.email_field :email, class: "form-control", placeholder: "Enter email" %>
+    </div>
+  </div>
+
+  <div class= "form-group row">
+    <%= f.label :password, class: "col-sm-1 col-form-label" %>
+    <div class= "col-sm-8">
+    <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
+    </div>
+  </div>
+
+
+    <div class= "form-group row col-sm-6 col-md-6">
+      <%= f.submit "Sign up", class: "btn btn-primary" %>
+    </div>
+
+
+
+<% end %>
+
+<div class= "col-xs-4 col-xs-offset-4 text-center">
+  [ <%= link_to "Cancel request and back to article listings", articles_path, class: "btn" %> ]
+
+</div>
+</div>
